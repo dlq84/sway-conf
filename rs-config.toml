@@ -3,16 +3,11 @@ theme = "ctp-mocha"
 [icons]
 icons = "awesome5"
 
-# [[block]]
-# block = "custom"
-# interval = 10
-# command = '''curl "https://api.coincap.io/v2/markets?exchangeId=binance&baseId=storj&quoteId=bitcoin" | jq '.data[0]' '''
-# json = true
-# format = "{baseSymbol}"
-
 [[block]]
 block = "net"
 device = "enp6s0"
+format_alt = "$icon ^icon_net_down $speed_down ^icon_net_up $speed_up $ip"
+format = "$icon ^icon_net_down $speed_down ^icon_net_up $speed_up [$ipv6]"
 interval = 1
 
 [[block]]
@@ -42,10 +37,7 @@ alert = 10.0
 
 [[block]]
 block = "memory"
-# display_type = "memory"
-#format_mem = "{Mup}%"
-#format_swap = "{SUp}%"
-format = "$icon$mem_used/$mem_total ($mem_used_percents)"
+format = "$icon $mem_used/$mem_total ($mem_used_percents)"
 critical_mem = 75
 
 [[block]]
@@ -56,53 +48,27 @@ format = "$icon$utilization $frequency"
 [[block]]
 block = "load"
 interval = 1
-# format = "$icon $1m"
 
 [[block]]
 block = "temperature"
-# collapsed = false
 interval = 10
 format = "$icon C:$average"
 chip = "k10temp-pci-00c3"
 
 [[block]]
 block = "temperature"
-# collapsed = false
 interval = 1
 format = "$icon G:$average"
 chip = "amdgpu-pci-0900"
-
 
 [[block]]
 block = "battery"
 device = "ps-controller-battery-a0:ab:51:bf:ea:71"
 # hide_missing = true
 format = "$icon $percentage"
-# missing_format = ""
-
-[[block]]
-block = "external_ip"
-format = " $version $ip $country_flag"
-interval = 3600
-error_interval = 3600
-
-[[block]]
-block = "net"
-device = "enp6s0"
-format = "$ip"
-
-
-# device = "^wlo0$"
-
-# [[block]]
-# block = "notify"
-# driver = "swaync"
-# format = "$icon $notification_count $paused"
-
 
 [[block]]
 block = "sound"
-
 
 [[block]]
 block = "time"
@@ -119,4 +85,3 @@ action = "show"
 [[block.click]]
 button = "right"
 action = "toggle_paused"
-
