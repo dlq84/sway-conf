@@ -63,9 +63,14 @@ chip = "amdgpu-pci-0900"
 
 [[block]]
 block = "battery"
+driver = "upower"
 device = "ps-controller-battery-a0:ab:51:bf:ea:71"
-# hide_missing = true
+full_format = "$icon $percentage"
+charging_format = "$icon $percentage $time"
+empty_format = "$icon $percentage"
 format = "$icon $percentage"
+empty_threshold = 1
+missing_format = ""
 
 [[block]]
 block = "sound"

@@ -27,13 +27,15 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+# set $term kitty
+set $term ghostty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | wmenu | xargs swaymsg exec --
-set $menu bemenu-run | xargs swaymsg exec --
-
+# set $menu bemenu-run | xargs swaymsg exec --
+set $menu bemenu-run --fb "#24273a" --ff "#cad3f5" --nb "#24273a" --nf "#cad3f5" --tb "#24273a" --hb "#24273a" --tf "#ed8796" --hf "#eed49f" --af "#cad3f5" --ab "#24273a"
+# set $menu walker
 set $browser firefox
 
 ### Output configuration
@@ -49,9 +51,12 @@ set $browser firefox
 
 ####
 output DP-1 mode 1920x1200@59.950Hz position 0,0
+output DP-2 mode 3440x1440@59.973Hz position 1920,0
+output DP-3 mode 2560x1440@143.856Hz position 5360,0
+
+# gaming
 # output DP-1 disable
-output DP-2 mode 2560x1440@143.856Hz position 1920,0
-output DP-3 mode 1920x1080@359.748Hz position 4480,0
+# output DP-2 mode 3440x1440@59.973Hz position 0,0
 # output DP-3 disable
 focus output DP-2
 #
